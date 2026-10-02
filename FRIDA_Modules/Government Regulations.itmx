@@ -5,7 +5,7 @@
 		<name>Government Regulations</name>
 		<uuid>309c5090-8988-4575-b19f-edb0ca37529d</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="4.2.1" isee:build_number="3906" isee:saved_by_v1="true" lang="en">Stella_Architect</product>
+		<product version="4.3.1" isee:build_number="3962" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<ai_information>
 		<status verified="false"/>
@@ -228,6 +228,18 @@
 			<alias>dmnl</alias>
 			<alias>unitless</alias>
 		</unit>
+		<unit name="G">
+			<eqn>Giga</eqn>
+		</unit>
+		<unit name="GtCO2">
+			<eqn>Giga*tCO2</eqn>
+		</unit>
+		<unit name="GtCH4">
+			<eqn>Giga*tCH4</eqn>
+		</unit>
+		<unit name="GtN2O">
+			<eqn>Giga*tN2O</eqn>
+		</unit>
 	</model_units>
 	<model name="Government_Regulations">
 		<variables>
@@ -253,7 +265,7 @@ https://www.nature.com/articles/s41586-024-08106-4
 			<aux name="start year" access="output">
 				<doc>${Policy}
 </doc>
-				<eqn>2025</eqn>
+				<eqn>2010</eqn>
 				<format precision="full"/>
 				<units>Year</units>
 			</aux>

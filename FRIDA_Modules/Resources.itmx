@@ -5,8 +5,11 @@
 		<name>Resources</name>
 		<uuid>e9e3d587-974f-4869-83a8-55d5b762307b</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.8" isee:build_number="3578" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="4.3.1" isee:build_number="3962" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
+	<ai_information>
+		<status verified="false"/>
+	</ai_information>
 	<sim_specs isee:sim_duration="0" isee:run_prefix="Run" isee:simulation_delay="0" isee:restore_on_start="false" isee:save_interval="1" method="RK4" time_units="Year" isee:instantaneous_flows="false" isee:ignore_module_errors="true" isee:strict_units="false" isee:loop_scores="false" isee:loop_exhaustive_allowed="1000">
 		<start>1980</start>
 		<stop>2100</stop>
@@ -19,7 +22,21 @@
 		</dim>
 		<dim name="Run" size="1"/>
 	</dimensions>
-	<isee:prefs saved_runs="100" keep="false" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_secure_mode="true" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" rifp="true">
+	<isee:prefs saved_runs="5" keep="false" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_secure_mode="true" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rifp="true">
+		<isee:tag_styles>
+			<isee:tag_style tag="Assumption"/>
+			<isee:tag_style tag="Calibrated Output"/>
+			<isee:tag_style tag="Climate Impact Parameter"/>
+			<isee:tag_style tag="Explanatory Variable"/>
+			<isee:tag_style tag="External Parameter"/>
+			<isee:tag_style tag="Interface"/>
+			<isee:tag_style tag="Internal Calibration Parameter"/>
+			<isee:tag_style tag="No Sensi"/>
+			<isee:tag_style tag="Output"/>
+			<isee:tag_style tag="Parameter"/>
+			<isee:tag_style tag="Policy"/>
+			<isee:tag_style tag="Unit"/>
+		</isee:tag_styles>
 		<isee:ignored_words>
 			<isee:ignored_word>WolrdTrans</isee:ignored_word>
 			<isee:ignored_word>WorldTrans</isee:ignored_word>
@@ -269,6 +286,58 @@
 				<connect2 to="fossil_energy_gas.cost_of_storing_CO2_per_unit" from="CCS.cost_of_storing_CO2_per_unit"/>
 				<connect to="fossil_energy_oil.cost_of_storing_CO2_per_unit" from="CCS.cost_of_storing_CO2_per_unit"/>
 				<connect2 to="fossil_energy_oil.cost_of_storing_CO2_per_unit" from="CCS.cost_of_storing_CO2_per_unit"/>
+				<connect to="Emissions.emissions_factor_coal" from="CCS.emissions_factor_coal"/>
+				<connect2 to="Emissions.emissions_factor_coal" from="CCS.emissions_factor_coal"/>
+				<connect to="Emissions.emissions_factor_gas" from="CCS.emissions_factor_gas"/>
+				<connect2 to="Emissions.emissions_factor_gas" from="CCS.emissions_factor_gas"/>
+				<connect to="Emissions.emissions_factor_oil" from="CCS.emissions_factor_oil"/>
+				<connect2 to="Emissions.emissions_factor_oil" from="CCS.emissions_factor_oil"/>
+				<connect to="Emissions.Primary_Energy_coal_SSP1" from="CCS.Primary_Energy_coal_SSP1"/>
+				<connect2 to="Emissions.Primary_Energy_coal_SSP1" from="CCS.Primary_Energy_coal_SSP1"/>
+				<connect to="Emissions.Primary_Energy_coal_SSP2" from="CCS.Primary_Energy_coal_SSP2"/>
+				<connect2 to="Emissions.Primary_Energy_coal_SSP2" from="CCS.Primary_Energy_coal_SSP2"/>
+				<connect to="Emissions.Primary_Energy_coal_SSP3" from="CCS.Primary_Energy_coal_SSP3"/>
+				<connect2 to="Emissions.Primary_Energy_coal_SSP3" from="CCS.Primary_Energy_coal_SSP3"/>
+				<connect to="Emissions.Primary_Energy_coal_SSP4" from="CCS.Primary_Energy_coal_SSP4"/>
+				<connect2 to="Emissions.Primary_Energy_coal_SSP4" from="CCS.Primary_Energy_coal_SSP4"/>
+				<connect to="Emissions.Primary_Energy_coal_SSP5" from="CCS.Primary_Energy_coal_SSP5"/>
+				<connect2 to="Emissions.Primary_Energy_coal_SSP5" from="CCS.Primary_Energy_coal_SSP5"/>
+				<connect to="Emissions.Primary_Energy_gas_SSP3_1" from="CCS.Primary_Energy_gas_SSP1"/>
+				<connect2 to="Emissions.Primary_Energy_gas_SSP3_1" from="CCS.Primary_Energy_gas_SSP1"/>
+				<connect to="Emissions.Primary_Energy_gas_SSP3_2" from="CCS.Primary_Energy_gas_SSP2"/>
+				<connect2 to="Emissions.Primary_Energy_gas_SSP3_2" from="CCS.Primary_Energy_gas_SSP2"/>
+				<connect to="Emissions.Primary_Energy_gas_SSP3" from="CCS.Primary_Energy_gas_SSP3"/>
+				<connect2 to="Emissions.Primary_Energy_gas_SSP3" from="CCS.Primary_Energy_gas_SSP3"/>
+				<connect to="Emissions.Primary_Energy_gas_SSP3_4" from="CCS.Primary_Energy_gas_SSP4"/>
+				<connect2 to="Emissions.Primary_Energy_gas_SSP3_4" from="CCS.Primary_Energy_gas_SSP4"/>
+				<connect to="Emissions.Primary_Energy_gas_SSP3_3" from="CCS.Primary_Energy_gas_SSP5"/>
+				<connect2 to="Emissions.Primary_Energy_gas_SSP3_3" from="CCS.Primary_Energy_gas_SSP5"/>
+				<connect to="Emissions.Primary_Energy_oil_SSP3_3" from="CCS.Primary_Energy_oil_SSP1"/>
+				<connect2 to="Emissions.Primary_Energy_oil_SSP3_3" from="CCS.Primary_Energy_oil_SSP1"/>
+				<connect to="Emissions.Primary_Energy_oil_SSP3_4" from="CCS.Primary_Energy_oil_SSP2"/>
+				<connect2 to="Emissions.Primary_Energy_oil_SSP3_4" from="CCS.Primary_Energy_oil_SSP2"/>
+				<connect to="Emissions.Primary_Energy_oil_SSP3" from="CCS.Primary_Energy_oil_SSP3"/>
+				<connect2 to="Emissions.Primary_Energy_oil_SSP3" from="CCS.Primary_Energy_oil_SSP3"/>
+				<connect to="Emissions.Primary_Energy_oil_SSP3_2" from="CCS.Primary_Energy_oil_SSP4"/>
+				<connect2 to="Emissions.Primary_Energy_oil_SSP3_2" from="CCS.Primary_Energy_oil_SSP4"/>
+				<connect to="Emissions.Primary_Energy_oil_SSP3_1" from="CCS.Primary_Energy_oil_SSP5"/>
+				<connect2 to="Emissions.Primary_Energy_oil_SSP3_1" from="CCS.Primary_Energy_oil_SSP5"/>
+				<connect to="Emissions.share_of_coal_energy_stored" from="CCS.share_of_coal_energy_stored"/>
+				<connect2 to="Emissions.share_of_coal_energy_stored" from="CCS.share_of_coal_energy_stored"/>
+				<connect to="fossil_energy_coal.share_of_coal_energy_stored" from="CCS.share_of_coal_energy_stored"/>
+				<connect2 to="fossil_energy_coal.share_of_coal_energy_stored" from="CCS.share_of_coal_energy_stored"/>
+				<connect to="Emissions.share_of_gas_energy_stored" from="CCS.share_of_gas_energy_stored"/>
+				<connect2 to="Emissions.share_of_gas_energy_stored" from="CCS.share_of_gas_energy_stored"/>
+				<connect to="fossil_energy_gas.share_of_gas_energy_stored" from="CCS.share_of_gas_energy_stored"/>
+				<connect2 to="fossil_energy_gas.share_of_gas_energy_stored" from="CCS.share_of_gas_energy_stored"/>
+				<connect to="Emissions.share_of_oil_energy_stored" from="CCS.share_of_oil_energy_stored"/>
+				<connect2 to="Emissions.share_of_oil_energy_stored" from="CCS.share_of_oil_energy_stored"/>
+				<connect to="fossil_energy_oil.share_of_oil_energy_stored" from="CCS.share_of_oil_energy_stored"/>
+				<connect2 to="fossil_energy_oil.share_of_oil_energy_stored" from="CCS.share_of_oil_energy_stored"/>
+				<connect to="Emissions.SSP_experiments" from="CCS.SSP_experiments"/>
+				<connect2 to="Emissions.SSP_experiments" from="CCS.SSP_experiments"/>
+				<connect to="Emissions.switch_SSP" from="CCS.switch_SSP"/>
+				<connect2 to="Emissions.switch_SSP" from="CCS.switch_SSP"/>
 				<connect to="CCS.CO2_emissions_from_biofuels" from="Emissions.CO2_emissions_from_biofuels"/>
 				<connect2 to="CCS.CO2_emissions_from_biofuels" from="Emissions.CO2_emissions_from_biofuels"/>
 				<connect to="CCS.CO2_emissions_from_coal" from="Emissions.CO2_emissions_from_coal"/>
@@ -281,12 +350,6 @@
 				<connect2 to="CCS.GtC_to_MtCO2" from="Emissions.GtC_to_MtCO2"/>
 				<connect to="CCS.share_of_biofuel_emissions_stored" from="Government_Regulations.share_of_biofuel_emissions_stored"/>
 				<connect2 to="CCS.share_of_biofuel_emissions_stored" from="Government_Regulations.share_of_biofuel_emissions_stored"/>
-				<connect to="CCS.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
-				<connect2 to="CCS.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
-				<connect to="CCS.share_of_gas_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
-				<connect2 to="CCS.share_of_gas_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
-				<connect to="CCS.share_of_oil_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
-				<connect2 to="CCS.share_of_oil_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
 			</module>
 		</variables>
 		<views>
@@ -337,7 +400,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="314.167" isee:scroll_y="250" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="314.167" isee:scroll_y="250" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -408,34 +471,7 @@ middle of power generation storing cost</doc>
 				<eqn>75</eqn>
 				<units>c$/(tC/year)</units>
 			</aux>
-			<aux name="share of coal emissions stored" access="input">
-				<eqn>0</eqn>
-				<gf>
-					<xscale min="0" max="2"/>
-					<yscale min="0" max="2"/>
-					<ypts>0,0,0,0,0,0,0,0,0,0,0</ypts>
-				</gf>
-				<units>dmnl</units>
-			</aux>
-			<aux name="share of oil\nemissions stored" access="input">
-				<eqn>0</eqn>
-				<gf>
-					<xscale min="0" max="2"/>
-					<yscale min="0" max="2"/>
-					<ypts>0,0,0,0,0,0,0,0,0,0,0</ypts>
-				</gf>
-				<units>dmnl</units>
-			</aux>
-			<aux name="share of gas\nemissions stored" access="input">
-				<eqn>0</eqn>
-				<gf>
-					<xscale min="0" max="2"/>
-					<yscale min="0" max="2"/>
-					<ypts>0,0,0,0,0,0,0,0,0,0,0</ypts>
-				</gf>
-				<units>dmnl</units>
-			</aux>
-			<aux name="share of biofuel\nemissions stored" access="input">
+			<aux name="share of biofuel\nemissions stored" access="output" throughput="true">
 				<eqn>0</eqn>
 				<gf>
 					<xscale min="0" max="2"/>
@@ -476,14 +512,14 @@ middle of power generation storing cost</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>share_of_coal_emissions_stored*CO2_emissions_from_coal</eqn>
+				<eqn>share_of_coal_energy_stored*CO2_emissions_from_coal</eqn>
 				<units>MtCO2/Year</units>
 			</aux>
 			<aux name="storing carbon from gas\nemissions">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>share_of_gas_emissions_stored*CO2_emissions_from_gas</eqn>
+				<eqn>share_of_gas_energy_stored*CO2_emissions_from_gas</eqn>
 				<units>MtCO2/Year</units>
 			</aux>
 			<aux name="storing carbon from biofuel\nemissions">
@@ -524,7 +560,7 @@ middle of power generation storing cost</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>share_of_oil_emissions_stored*CO2_emissions_from_oil</eqn>
+				<eqn>share_of_oil_energy_stored*CO2_emissions_from_oil</eqn>
 				<units>MtCO2/Year</units>
 			</aux>
 			<aux name="GtC to MtCO2" access="input">
@@ -541,6 +577,363 @@ middle of power generation storing cost</doc>
 			<aux name="cost of storing CO2 per unit" access="output" isee:autocreated="true">
 				<eqn>UNIT_GtC_to_tC / GtC_to_MtCO2 * cost_of_storing_carbon_per_unit</eqn>
 				<units>c$/(MtCO2/year)</units>
+			</aux>
+			<aux name="CCS coal SSP345">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="5000"/>
+					<ypts>0,0,0,7.0364,40.8989,79.4364,82.8614,84.935,81.6726,71.1693</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS oil SSP345">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="100"/>
+					<ypts>0,0,0,0,5.0418,17.9806,35.0432,44.0208,42.5299,40.053</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS gas SSP345">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="7000"/>
+					<ypts>0,0,0,0,14.2273,36.7257,57.4637,65.7677,63.8465,58.6348</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="share of coal energy stored" access="output">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>IF TIME &gt;= 2010 AND CCS_experiments=1 THEN
+IF switch_SSP=119 THEN
+CCS_coal_SSP119*emissions_factor_coal/CO2_emissions_from_coal
+ELSE IF switch_SSP=219 THEN
+CCS_coal_SSP219*emissions_factor_coal/CO2_emissions_from_coal
+ELSE IF switch_SSP=345 THEN
+CCS_coal_SSP345*emissions_factor_coal/CO2_emissions_from_coal
+ELSE IF switch_SSP=434 THEN
+CCS_coal_SSP434*emissions_factor_coal/CO2_emissions_from_coal
+ELSE
+CCS_coal_SSP545*emissions_factor_coal/CO2_emissions_from_coal
+ELSE
+0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="emissions factor coal" access="output">
+				<eqn>95</eqn>
+				<units>MtCO2/Ej</units>
+			</aux>
+			<aux name="emissions factor oil" access="output">
+				<eqn>73</eqn>
+				<units>MtCO2/Ej</units>
+			</aux>
+			<aux name="emissions factor gas" access="output">
+				<eqn>56</eqn>
+				<units>MtCO2/Ej</units>
+			</aux>
+			<aux name="share of oil energy stored" access="output">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>IF TIME &gt;= 2010 AND CCS_experiments=1 THEN
+IF switch_SSP=119 THEN
+CCS_oil_SSP119*emissions_factor_oil/CO2_emissions_from_oil
+ELSE IF switch_SSP=219 THEN
+CCS_oil_SSP219*emissions_factor_oil/CO2_emissions_from_oil
+ELSE IF switch_SSP=345 THEN
+CCS_oil_SSP345*emissions_factor_oil/CO2_emissions_from_oil
+ELSE IF switch_SSP=434 THEN
+CCS_oil_SSP434*emissions_factor_oil/CO2_emissions_from_oil
+ELSE
+CCS_oil_SSP545*emissions_factor_oil/CO2_emissions_from_oil
+ELSE
+0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="share of gas energy stored" access="output">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>IF TIME &gt;= 2010 AND CCS_experiments=1 THEN
+IF switch_SSP=119 THEN
+CCS_gas_SSP119*emissions_factor_gas/CO2_emissions_from_gas
+ELSE IF switch_SSP=219 THEN
+CCS_gas_SSP219*emissions_factor_gas/CO2_emissions_from_gas
+ELSE IF switch_SSP=345 THEN
+CCS_gas_SSP345*emissions_factor_gas/CO2_emissions_from_gas
+ELSE IF switch_SSP=434 THEN
+CCS_gas_SSP434*emissions_factor_gas/CO2_emissions_from_gas
+ELSE
+CCS_gas_SSP545*emissions_factor_gas/CO2_emissions_from_gas
+ELSE
+0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="CCS\nexperiments" access="output">
+				<eqn>1</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="SSP\nexperiments" access="output">
+				<eqn>0</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="Primary Energy coal SSP3" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>134.4127,175.4854,222.2494,263.7164,306.6587,346.9111,392.0646,438.3159,488.4998,542.8157</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy oil SSP3" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>176.6215,216.916,242.7531,254.7291,249.8956,237.7151,228.8703,219.5925,214.4281,204.8428</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy gas SSP3" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>106.729,131.3773,159.9289,182.1498,202.7898,219.8977,229.6763,238.176,246.7727,256.1176</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS coal SSP119">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="5000"/>
+					<ypts>0,0.434411895751953,3.43090600585937,10.3956298828125,15.9269697265625,19.852509765625,22.11233984375,19.7694609375,14.7090498046875,9.426314453125</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS coal SSP219">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="60"/>
+					<ypts>0,0,8.7651,14.5647,50.7111,29.7318,25.1461,22.8772,22.074,22.6164</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS coal SSP434">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="5000"/>
+					<ypts>0,1.24133800045469,16.5931295882266,40.988018834988,61.508723778745,67.5587100497445,59.4679865315288,45.4054780259675,22.0650761378977,6.47265718828005</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS coal SSP545">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="5000"/>
+					<ypts>0,1.43261836550658,7.97921174951434,31.4803777581152,83.1229253112842,119.620211357111,134.723551645764,141.232197328746,143.178934426533,136.519663859934</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS oil SSP119">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="5000"/>
+					<ypts>0,0.21656640625,1.03280200195312,1.91165905761719,1.4699580078125,0.59682470703125,0.611908874511719,0.692247375488281,0.640870971679688,0.435645690917969</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS oil SSP219">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="60"/>
+					<ypts>0,0,10.0145,27.4019,51.5981,40.6336,36.3438,33.3992,31.6482,31.2998</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS oil SSP434">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="5000"/>
+					<ypts>0,0.159296999432941,0.508977975456101,0.791169525722332,1.17964297895144,1.60522261163446,1.58211019686939,1.45421334912792,1.23086219714163,0.849864353593734</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS oil SSP545">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="1980" max="2100"/>
+					<yscale min="0" max="5000"/>
+					<ypts>0,0.177629746037158,0.25512127192856,1.06324861643411,2.50515318593951,4.59576668133228,6.33248216450934,6.29767784936323,4.04981935393656,4.18286400473667</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS gas SSP119">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="5000"/>
+					<ypts>0,1.40647399902344,20.50544921875,72.6688671875,94.73734375,101.687296875,109.890296875,88.3079609375,61.3345703125,40.0718984375</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS gas SSP219">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="60"/>
+					<ypts>0,0,11.2622,25.815,65.6363,53.9244,51.8955,52.3031,53.4765,55.7348</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS gas SSP434">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="5000"/>
+					<ypts>0,1.14601937558596,7.69656171144567,17.6175276265371,29.904710866598,41.3592064714745,45.0523967317968,42.0288401115228,32.0707842525555,19.8844578658806</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="CCS gas SSP545">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="5000"/>
+					<ypts>0,1.31608388803716,4.40610555706388,15.5221995915835,42.6938587482068,76.6817283952658,109.609077186337,141.221334236645,142.931465305811,138.718439468431</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy coal SSP4" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>143.25977845,197.212979,250.970104,278.107366,287.77771,299.834626,295.647957,263.088314,238.048772,218.19362</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy oil SSP2" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>176.3004,212.391,244.9913,270.303,282.9735,293.4749,302.1352,301.645,291.8912,273.2074</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy gas SSP2" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>106.2908,128.5284,150.9598,168.7126,182.4189,200.2556,215.6888,226.7789,233.1103,242.8061</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy coal SSP2" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>135.0233,172.1442,209.451,243.8975,268.2401,269.5691,277.5914,296.3995,332.6397,369.3084</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy oil SSP4" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>176.07883919,191.2752549,188.5721992,187.4324822,188.0566679,182.44435,189.891522,197.135541,201.120369,202.34456</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy gas SSP4" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>113.8447856,146.950129,195.025761,226.11647,241.348954,243.242796,231.029408,220.252609,212.304647,210.282661</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy coal SSP5" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>143.25977845,206.1751012,302.970155,393.353728,460.851123,519.237111,547.474935,543.008194,539.42136,518.36926</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy oil SSP5" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>176.07884029,196.61836,213.9430655,247.941453,289.025711,334.42333,392.148657,444.661836,488.085902,507.797538</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy gas SSP5" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>113.8447956,159.059281,243.289912,323.0866,379.1933,409.35804,423.16405,424.4018,402.21494,403.52942</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy coal SSP1" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>144.98440625,158.901796875,170.56490625,180.658,180.44809375,184.774,182.1625,158.136796875,136.56659375,115.5791015625</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy oil SSP1" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>171.722796875,175.09440625,159.61290625,142.62440625,141.37390625,135.873703125,121.6318984375,93.3801484375,69.534703125,54.22723828125</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<aux name="Primary Energy gas SSP1" access="output">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="2010" max="2100"/>
+					<yscale min="0" max="2"/>
+					<ypts>112.7963984375,152.96159375,203.004,248.93109375,268.8588125,276.5573125,262.2763125,239.807203125,224.638203125,217.239796875</ypts>
+				</gf>
+				<units>Ej/Year</units>
+			</aux>
+			<group name="Emissions from SSP3 baseline" run="false">
+				<format scale_by="auto"/>
+				<entity name="Primary_Energy_coal_SSP3"/>
+				<entity name="Primary_Energy_gas_SSP3"/>
+				<entity name="Primary_Energy_oil_SSP3"/>
+			</group>
+			<aux name="switch SSP" access="output">
+				<eqn>434</eqn>
+				<units>dmnl</units>
 			</aux>
 		</variables>
 		<views>
@@ -568,7 +961,7 @@ middle of power generation storing cost</doc>
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -591,7 +984,7 @@ middle of power generation storing cost</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:scroll_x="510" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -630,42 +1023,31 @@ middle of power generation storing cost</doc>
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<stock x="1041.67" y="240" name="stored CO2"/>
-				<flow x="941.252" y="240" name="Storing CO2">
+				<stock x="1227.67" y="386" name="stored CO2"/>
+				<flow x="1127.25" y="386" name="Storing CO2">
 					<pts>
-						<pt x="863.333" y="240"/>
-						<pt x="1019.17" y="240"/>
+						<pt x="1049.33" y="386"/>
+						<pt x="1205.17" y="386"/>
 					</pts>
 				</flow>
-				<aux x="940" y="506.667" name="cost of storing carbon per unit"/>
-				<aux font_style="italic" font_weight="bold" x="233.333" y="121.667" name="share of coal emissions stored"/>
-				<aux font_style="italic" font_weight="bold" x="368.333" y="121.667" name="share of oil\nemissions stored"/>
-				<aux font_style="italic" font_weight="bold" x="527.5" y="121.667" name="share of gas\nemissions stored"/>
-				<aux font_style="italic" font_weight="bold" x="688.333" y="121.667" name="share of biofuel\nemissions stored"/>
-				<aux font_style="italic" font_weight="bold" x="688.333" y="321.667" name="CO2 emissions from biofuels"/>
-				<aux font_style="italic" font_weight="bold" x="368.333" y="321.667" name="CO2 emissions from oil"/>
-				<aux font_style="italic" font_weight="bold" x="527.5" y="321.667" name="CO2 emissions from gas"/>
-				<aux font_style="italic" font_weight="bold" x="233.333" y="321.667" name="CO2 emissions from coal"/>
-				<aux x="233.333" y="238.667" name="storing carbon from coal\nemissions"/>
-				<connector uid="1" angle="96.6325">
+				<aux x="1126" y="652.667" name="cost of storing carbon per unit"/>
+				<aux font_style="italic" font_weight="bold" x="919.333" y="267.667" name="share of biofuel\nemissions stored"/>
+				<aux font_style="italic" font_weight="bold" x="919.333" y="467.667" name="CO2 emissions from biofuels"/>
+				<aux font_style="italic" font_weight="bold" x="508.333" y="467.667" name="CO2 emissions from oil"/>
+				<aux font_style="italic" font_weight="bold" x="721.5" y="467.667" name="CO2 emissions from gas"/>
+				<aux font_style="italic" font_weight="bold" x="278.333" y="467.667" name="CO2 emissions from coal"/>
+				<aux x="278.333" y="384.667" name="storing carbon from coal\nemissions"/>
+				<connector uid="1" angle="90">
 					<from>CO2_emissions_from_coal</from>
 					<to>storing_carbon_from_coal_emissions</to>
 				</connector>
-				<connector uid="2" angle="265.815">
-					<from>share_of_coal_emissions_stored</from>
-					<to>storing_carbon_from_coal_emissions</to>
-				</connector>
-				<aux x="527.5" y="238.667" name="storing carbon from gas\nemissions"/>
-				<connector uid="3" angle="271.364">
-					<from>share_of_gas_emissions_stored</from>
-					<to>storing_carbon_from_gas_emissions</to>
-				</connector>
+				<aux x="721.5" y="384.667" name="storing carbon from gas\nemissions"/>
 				<connector uid="4" angle="95.3145">
 					<from>CO2_emissions_from_gas</from>
 					<to>storing_carbon_from_gas_emissions</to>
 				</connector>
-				<aux x="688.333" y="238.667" name="storing carbon from biofuel\nemissions"/>
-				<connector uid="5" angle="275.711">
+				<aux x="919.333" y="384.667" name="storing carbon from biofuel\nemissions"/>
+				<connector uid="5" angle="270">
 					<from>share_of_biofuel_emissions_stored</from>
 					<to>storing_carbon_from_biofuel_emissions</to>
 				</connector>
@@ -673,25 +1055,25 @@ middle of power generation storing cost</doc>
 					<from>CO2_emissions_from_biofuels</from>
 					<to>storing_carbon_from_biofuel_emissions</to>
 				</connector>
-				<connector uid="7" angle="359.892">
+				<connector uid="7" angle="359.91">
 					<from>storing_carbon_from_coal_emissions</from>
 					<to>Storing_CO2</to>
 				</connector>
-				<connector uid="8" angle="359.815">
+				<connector uid="8" angle="359.812">
 					<from>storing_carbon_from_gas_emissions</from>
 					<to>Storing_CO2</to>
 				</connector>
-				<connector uid="9" angle="359.698">
+				<connector uid="9" angle="359.633">
 					<from>storing_carbon_from_biofuel_emissions</from>
 					<to>Storing_CO2</to>
 				</connector>
-				<flow x="1154.67" y="240" name="CO2 Emissions from Leakage">
+				<flow x="1340.67" y="386" name="CO2 Emissions from Leakage">
 					<pts>
-						<pt x="1064.17" y="240"/>
-						<pt x="1269.17" y="240"/>
+						<pt x="1250.17" y="386"/>
+						<pt x="1455.17" y="386"/>
 					</pts>
 				</flow>
-				<aux x="1153.42" y="156.667" name="stored CO2 leakage rate"/>
+				<aux x="1339.42" y="302.667" name="stored CO2 leakage rate"/>
 				<connector uid="10" angle="270.859">
 					<from>stored_CO2_leakage_rate</from>
 					<to>CO2_Emissions_from_Leakage</to>
@@ -700,27 +1082,23 @@ middle of power generation storing cost</doc>
 					<from>stored_CO2</from>
 					<to>CO2_Emissions_from_Leakage</to>
 				</connector>
-				<aux x="941.25" y="321.667" name="cost of storing CO2"/>
+				<aux x="1127.25" y="467.667" name="cost of storing CO2"/>
 				<connector uid="12" angle="269.999">
 					<from>Storing_CO2</from>
 					<to>cost_of_storing_CO2</to>
 				</connector>
-				<aux x="800" y="444.167" name="UNIT GtC to tC"/>
-				<aux x="368.333" y="238.667" name="storing carbon from oil\nemissions"/>
-				<connector uid="13" angle="359.867">
+				<aux x="986" y="590.167" name="UNIT GtC to tC"/>
+				<aux x="508.333" y="384.667" name="storing carbon from oil\nemissions"/>
+				<connector uid="13" angle="359.877">
 					<from>storing_carbon_from_oil_emissions</from>
 					<to>Storing_CO2</to>
 				</connector>
-				<connector uid="14" angle="86.0091">
+				<connector uid="14" angle="90">
 					<from>CO2_emissions_from_oil</from>
 					<to>storing_carbon_from_oil_emissions</to>
 				</connector>
-				<connector uid="15" angle="274.289">
-					<from>share_of_oil_emissions_stored</from>
-					<to>storing_carbon_from_oil_emissions</to>
-				</connector>
-				<aux font_style="italic" font_weight="bold" x="1042.5" y="442.5" name="GtC to MtCO2"/>
-				<aux x="1041.67" y="314.167" name="stored Carbon"/>
+				<aux font_style="italic" font_weight="bold" x="1228.5" y="588.5" name="GtC to MtCO2"/>
+				<aux x="1227.67" y="460.167" name="stored Carbon"/>
 				<connector uid="16" angle="275.389">
 					<from>stored_CO2</from>
 					<to>stored_Carbon</to>
@@ -729,7 +1107,7 @@ middle of power generation storing cost</doc>
 					<from>GtC_to_MtCO2</from>
 					<to>stored_Carbon</to>
 				</connector>
-				<aux label_side="top" x="940" y="444.167" name="cost of storing CO2 per unit"/>
+				<aux label_side="top" x="1126" y="590.167" name="cost of storing CO2 per unit"/>
 				<connector uid="18" angle="90">
 					<from>cost_of_storing_carbon_per_unit</from>
 					<to>cost_of_storing_CO2_per_unit</to>
@@ -742,10 +1120,218 @@ middle of power generation storing cost</doc>
 					<from>GtC_to_MtCO2</from>
 					<to>cost_of_storing_CO2_per_unit</to>
 				</connector>
-				<connector uid="21" angle="89.4155">
+				<connector uid="21" angle="89.4154">
 					<from>cost_of_storing_CO2_per_unit</from>
 					<to>cost_of_storing_CO2</to>
 				</connector>
+				<aux label_side="bottom" x="280.941" y="228.344" name="CCS coal SSP345"/>
+				<aux x="509.251" y="218.724" name="CCS oil SSP345"/>
+				<aux x="722.418" y="210.344" name="CCS gas SSP345"/>
+				<aux x="280.941" y="293.971" name="share of coal energy stored"/>
+				<connector uid="22" angle="270">
+					<from>CCS_coal_SSP345</from>
+					<to>share_of_coal_energy_stored</to>
+				</connector>
+				<aux x="280.941" y="155" name="emissions factor coal"/>
+				<aux x="509.251" y="155" name="emissions factor oil"/>
+				<aux x="722.418" y="155" name="emissions factor gas"/>
+				<connector uid="23" angle="261.866">
+					<from>emissions_factor_coal</from>
+					<to>share_of_coal_energy_stored</to>
+				</connector>
+				<aux x="509.251" y="293.667" name="share of oil energy stored"/>
+				<connector uid="24" angle="270">
+					<from>CCS_oil_SSP345</from>
+					<to>share_of_oil_energy_stored</to>
+				</connector>
+				<connector uid="25" angle="270">
+					<from>emissions_factor_oil</from>
+					<to>share_of_oil_energy_stored</to>
+				</connector>
+				<aux x="713.506" y="284.755" width="17.8247" height="17.8247" name="share of gas energy stored"/>
+				<connector uid="26" angle="270">
+					<from>CCS_gas_SSP345</from>
+					<to>share_of_gas_energy_stored</to>
+				</connector>
+				<connector uid="27" angle="270">
+					<from>emissions_factor_gas</from>
+					<to>share_of_gas_energy_stored</to>
+				</connector>
+				<aux label_side="bottom" x="509.251" y="75.4969" name="CCS\nexperiments"/>
+				<connector uid="28" angle="223.739">
+					<from>CCS_experiments</from>
+					<to>share_of_coal_energy_stored</to>
+				</connector>
+				<connector uid="29" angle="270">
+					<from>CCS_experiments</from>
+					<to>share_of_oil_energy_stored</to>
+				</connector>
+				<connector uid="30" angle="314.335">
+					<from>CCS_experiments</from>
+					<to>share_of_gas_energy_stored</to>
+				</connector>
+				<connector uid="31" angle="268.353">
+					<from>share_of_coal_energy_stored</from>
+					<to>storing_carbon_from_coal_emissions</to>
+				</connector>
+				<connector uid="32" angle="269.422">
+					<from>share_of_oil_energy_stored</from>
+					<to>storing_carbon_from_oil_emissions</to>
+				</connector>
+				<connector uid="33" angle="266.04">
+					<from>share_of_gas_energy_stored</from>
+					<to>storing_carbon_from_gas_emissions</to>
+				</connector>
+				<connector uid="34" angle="161.985">
+					<from>CO2_emissions_from_coal</from>
+					<to>share_of_coal_energy_stored</to>
+				</connector>
+				<connector uid="35" angle="155.189">
+					<from>CO2_emissions_from_oil</from>
+					<to>share_of_oil_energy_stored</to>
+				</connector>
+				<connector uid="36" angle="149.174">
+					<from>CO2_emissions_from_gas</from>
+					<to>share_of_gas_energy_stored</to>
+				</connector>
+				<aux label_side="bottom" x="345.662" y="634.667" name="SSP\nexperiments"/>
+				<aux label_side="bottom" x="156.718" y="728.117" name="Primary Energy coal SSP3"/>
+				<aux label_side="bottom" x="156.718" y="791.555" name="Primary Energy oil SSP3"/>
+				<aux label_side="bottom" x="156.718" y="854.911" name="Primary Energy gas SSP3"/>
+				<stacked_container uid="37" x="1411.2" y="811.328" width="652.156" height="446.011" minimized="true">
+					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="652.156" height="446.011" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="9" num_y_grid_lines="6" num_x_labels="9" num_y_labels="6" title="Captured CO2" isee:fill_intensity="0.1" to="2100" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="black" isee:keep_zero_visible="true" pen_width="2" index="0" show_y_axis="true">
+							<entity name="Storing_CO2[1]"/>
+							<isee:data name="Invalid Run"/>
+						</plot>
+						<plot color="#FF2600" isee:keep_zero_visible="true" pen_width="2" index="1" show_y_axis="true">
+							<entity name="Storing_CO2[1]"/>
+							<isee:data name="Invalid Run"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="38" x="1221.34" y="811.328" width="540.513" height="422.753" minimized="true">
+					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="540.513" height="422.753" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="9" num_y_grid_lines="5" num_x_labels="9" num_y_labels="5" title="CO2 emissions Coal" isee:fill_intensity="0.1" to="2100" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="black" isee:keep_zero_visible="true" pen_width="2" index="0" show_y_axis="true">
+							<entity name="Emissions.CO2_emissions_from_coal[1]"/>
+							<isee:data name="Invalid Run"/>
+						</plot>
+						<plot color="red" isee:keep_zero_visible="true" pen_width="2" index="1" show_y_axis="true">
+							<entity name="Emissions.CO2_emissions_from_coal[1]"/>
+							<isee:data name="Invalid Run"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="39" x="1030.19" y="811.328" width="567.693" height="397.332" minimized="true">
+					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="567.693" height="397.332" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="9" num_y_grid_lines="5" num_x_labels="9" num_y_labels="5" title="Share of coal emissions stored" isee:fill_intensity="0.1" to="2100" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="black" isee:keep_zero_visible="true" pen_width="2" index="0" show_y_axis="true">
+							<entity name="share_of_coal_energy_stored[1]"/>
+							<isee:data name="Invalid Run"/>
+						</plot>
+						<plot color="red" isee:keep_zero_visible="true" pen_width="2" index="1" show_y_axis="true">
+							<entity name="share_of_coal_energy_stored[1]"/>
+							<isee:data name="Invalid Run"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<aux label_side="bottom" x="167.77" y="213.996" name="CCS coal SSP119"/>
+				<aux label_side="bottom" x="138.718" y="267.667" name="CCS coal SSP219"/>
+				<aux label_side="bottom" x="138.718" y="366.667" name="CCS coal SSP434"/>
+				<aux label_side="bottom" x="98.2635" y="320.667" name="CCS coal SSP545"/>
+				<aux label_side="bottom" x="422.771" y="192.344" name="CCS oil SSP119"/>
+				<aux label_side="bottom" x="422.771" y="262.981" name="CCS oil SSP219"/>
+				<aux label_side="bottom" x="595.692" y="200.724" name="CCS oil SSP434"/>
+				<aux label_side="bottom" x="613.692" y="271.202" name="CCS oil SSP545"/>
+				<aux label_side="bottom" x="823.481" y="129.171" name="CCS gas SSP119"/>
+				<aux label_side="bottom" x="817.478" y="192.344" name="CCS gas SSP219"/>
+				<aux label_side="bottom" x="817.478" y="344.108" name="CCS gas SSP434"/>
+				<aux label_side="bottom" x="817.478" y="262.981" name="CCS gas SSP545"/>
+				<aux label_side="bottom" x="650.663" y="710.385" name="Primary Energy coal SSP4"/>
+				<aux label_side="bottom" x="345.662" y="790.176" name="Primary Energy oil SSP2"/>
+				<aux label_side="right" x="331.529" y="866.5" name="Primary Energy gas SSP2"/>
+				<aux label_side="right" x="338.235" y="732.95" name="Primary Energy coal SSP2"/>
+				<aux label_side="bottom" x="662.155" y="777.2" name="Primary Energy oil SSP4"/>
+				<aux label_side="bottom" x="655.327" y="849.927" name="Primary Energy gas SSP4"/>
+				<aux label_side="bottom" x="437.921" y="928.163" name="Primary Energy coal SSP5"/>
+				<aux label_side="bottom" x="427.421" y="1005.75" name="Primary Energy oil SSP5"/>
+				<aux label_side="bottom" x="431.413" y="1079.71" name="Primary Energy gas SSP5"/>
+				<aux label_side="bottom" x="190.535" y="939.515" name="Primary Energy coal SSP1"/>
+				<aux label_side="bottom" x="180.035" y="1017.1" name="Primary Energy oil SSP1"/>
+				<aux label_side="bottom" x="184.027" y="1091.07" name="Primary Energy gas SSP1"/>
+				<group locked="true" x="31.5159" y="672.67" width="225.964" height="226.165" name="Emissions from SSP3 baseline"/>
+				<aux x="509.251" y="9" name="switch SSP"/>
+				<connector uid="40" angle="231.299">
+					<from>switch_SSP</from>
+					<to>share_of_coal_energy_stored</to>
+				</connector>
+				<connector uid="41" angle="324.752">
+					<from>CCS_coal_SSP119</from>
+					<to>share_of_coal_energy_stored</to>
+				</connector>
+				<connector uid="42" angle="345.973">
+					<from>CCS_coal_SSP219</from>
+					<to>share_of_coal_energy_stored</to>
+				</connector>
+				<connector uid="43" angle="8.3142">
+					<from>CCS_coal_SSP545</from>
+					<to>share_of_coal_energy_stored</to>
+				</connector>
+				<connector uid="44" angle="35.6284">
+					<from>CCS_coal_SSP434</from>
+					<to>share_of_coal_energy_stored</to>
+				</connector>
+				<connector uid="45" angle="270">
+					<from>switch_SSP</from>
+					<to>share_of_oil_energy_stored</to>
+				</connector>
+				<connector uid="46" angle="306.827">
+					<from>switch_SSP</from>
+					<to>share_of_gas_energy_stored</to>
+				</connector>
+				<connector uid="47" angle="310.481">
+					<from>CCS_oil_SSP119</from>
+					<to>share_of_oil_energy_stored</to>
+				</connector>
+				<connector uid="48" angle="340.464">
+					<from>CCS_oil_SSP219</from>
+					<to>share_of_oil_energy_stored</to>
+				</connector>
+				<connector uid="49" angle="227.076">
+					<from>CCS_oil_SSP434</from>
+					<to>share_of_oil_energy_stored</to>
+				</connector>
+				<connector uid="50" angle="192.139">
+					<from>CCS_oil_SSP545</from>
+					<to>share_of_oil_energy_stored</to>
+				</connector>
+				<connector uid="51" angle="230.789">
+					<from>CCS_gas_SSP119</from>
+					<to>share_of_gas_energy_stored</to>
+				</connector>
+				<connector uid="52" angle="224.048">
+					<from>CCS_gas_SSP219</from>
+					<to>share_of_gas_energy_stored</to>
+				</connector>
+				<connector uid="53" angle="194.52">
+					<from>CCS_gas_SSP545</from>
+					<to>share_of_gas_energy_stored</to>
+				</connector>
+				<connector uid="54" angle="152.998">
+					<from>CCS_gas_SSP434</from>
+					<to>share_of_gas_energy_stored</to>
+				</connector>
+				<stacked_container uid="55" x="325.235" y="67.5267" width="632.849" height="455.123" minimized="true">
+					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="632.849" height="455.123" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="10" num_y_grid_lines="7" num_x_labels="10" num_y_labels="7" title="FRIDA w CCS" isee:fill_intensity="0.1" to="2100" from="2010" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="#AA7942" isee:keep_zero_visible="true" pen_width="2" index="0" show_y_axis="true">
+							<entity name="Storing_CO2[1]"/>
+							<isee:data name="FRIDA w CCS SSP434"/>
+						</plot>
+						<plot color="#0433FF" isee:keep_zero_visible="true" pen_width="2" index="1" show_y_axis="true">
+							<entity name="Storing_CO2[1]"/>
+							<isee:data name="FRIDA w CCS SSP119"/>
+						</plot>
+					</graph>
+				</stacked_container>
 			</view>
 		</views>
 	</model>
@@ -1707,7 +2293,7 @@ Structure are considered old when they have passed half of their estimated avera
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>

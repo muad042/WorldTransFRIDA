@@ -5,8 +5,11 @@
 		<name>Climate</name>
 		<uuid>6b3172a7-ef66-4feb-8f28-f439698b1c18</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.7.3" isee:build_number="3465" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="4.3.1" isee:build_number="3962" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
+	<ai_information>
+		<status verified="false"/>
+	</ai_information>
 	<sim_specs isee:sim_duration="0" isee:run_prefix="Run" isee:simulation_delay="0" isee:restore_on_start="false" isee:save_interval="1" method="RK4" time_units="Year" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:strict_units="false" isee:loop_scores="false" isee:loop_exhaustive_allowed="1000">
 		<start>1980</start>
 		<stop>2130</stop>
@@ -22,7 +25,21 @@
 		</dim>
 		<dim name="Run" size="1"/>
 	</dimensions>
-	<isee:prefs saved_runs="100" keep="false" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_secure_mode="true" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" rifp="true">
+	<isee:prefs saved_runs="5" keep="false" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_secure_mode="true" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rifp="true">
+		<isee:tag_styles>
+			<isee:tag_style tag="Assumption"/>
+			<isee:tag_style tag="Calibrated Output"/>
+			<isee:tag_style tag="Climate Impact Parameter"/>
+			<isee:tag_style tag="Explanatory Variable"/>
+			<isee:tag_style tag="External Parameter"/>
+			<isee:tag_style tag="Interface"/>
+			<isee:tag_style tag="Internal Calibration Parameter"/>
+			<isee:tag_style tag="No Sensi"/>
+			<isee:tag_style tag="Output"/>
+			<isee:tag_style tag="Parameter"/>
+			<isee:tag_style tag="Policy"/>
+			<isee:tag_style tag="Unit"/>
+		</isee:tag_styles>
 		<isee:ignored_words>
 			<isee:ignored_word>WolrdTrans</isee:ignored_word>
 			<isee:ignored_word>WorldTrans</isee:ignored_word>
@@ -233,7 +250,7 @@
 	</model_units>
 	<model name="Climate">
 		<variables>
-			<module name="Sea Level" isee:label="" url="/Users/magr099/Documents/GitHub/WorldTransFRIDA_MBG/FRIDA_Modules/Sea Level.itmx">
+			<module name="Sea Level" isee:label="" url="/Users/murali/WorldTransFRIDA/FRIDA_Modules/Sea Level.itmx">
 				<format scale_by="auto"/>
 				<connect to="Freshwater.Land_water_storage_from_water_impoundment" from="Sea_Level.Land_water_storage_from_water_impoundment"/>
 				<connect2 to="Freshwater.Land_water_storage_from_water_impoundment" from="Sea_Level.Land_water_storage_from_water_impoundment"/>
@@ -271,7 +288,7 @@
 				<connect2 to="Sea_Level.total_groundwater_anomaly" from="Freshwater.total_groundwater_anomaly"/>
 			</module>
 			<module name="Ocean" isee:label="Ocean
-Carbon" url="/Users/magr099/Documents/GitHub/WorldTransFRIDA_MBG/FRIDA_Modules/Ocean.itmx">
+Carbon" url="/Users/murali/WorldTransFRIDA/FRIDA_Modules/Ocean.itmx">
 				<format scale_by="auto"/>
 				<connect to="CO2_Forcing.Air_sea_co2_flux_1" from="Ocean.Air_sea_co2_flux"/>
 				<connect2 to="CO2_Forcing.Air_sea_co2_flux_1" from="Ocean.Air_sea_co2_flux"/>
@@ -594,7 +611,7 @@ Carbon" url="/Users/magr099/Documents/GitHub/WorldTransFRIDA_MBG/FRIDA_Modules/O
 				<connect to="Energy_Balance_Model.Total_Effective_Radiative_Forcing" from="Forcing.Total_Effective_Radiative_Forcing"/>
 				<connect2 to="Energy_Balance_Model.Total_Effective_Radiative_Forcing" from="Forcing.Total_Effective_Radiative_Forcing"/>
 			</module>
-			<module name="Emissions" isee:label="" url="/Users/magr099/Documents/GitHub/WorldTransFRIDA_MBG/FRIDA_Modules/Emissions.itmx">
+			<module name="Emissions" isee:label="" url="/Users/murali/WorldTransFRIDA/FRIDA_Modules/Emissions.itmx">
 				<format scale_by="auto"/>
 				<connect to="Ozone_Forcing.Baseline_CO_emissions" from="Emissions.Baseline_CO_Emissions"/>
 				<connect2 to="Ozone_Forcing.Baseline_CO_emissions" from="Emissions.Baseline_CO_Emissions"/>
@@ -704,6 +721,12 @@ Carbon" url="/Users/magr099/Documents/GitHub/WorldTransFRIDA_MBG/FRIDA_Modules/O
 				<connect2 to="Emissions.CO2_emissions_from_degraded_land_1" from="degraded_land_soil_carbon.CO2_emissions_from_degraded_land"/>
 				<connect to="Emissions.deforestation_carbon_loss" from="Terrestrial_Carbon_Balance.deforestation_carbon_loss"/>
 				<connect2 to="Emissions.deforestation_carbon_loss" from="Terrestrial_Carbon_Balance.deforestation_carbon_loss"/>
+				<connect to="Emissions.emissions_factor_coal" from="CCS.emissions_factor_coal"/>
+				<connect2 to="Emissions.emissions_factor_coal" from="CCS.emissions_factor_coal"/>
+				<connect to="Emissions.emissions_factor_gas" from="CCS.emissions_factor_gas"/>
+				<connect2 to="Emissions.emissions_factor_gas" from="CCS.emissions_factor_gas"/>
+				<connect to="Emissions.emissions_factor_oil" from="CCS.emissions_factor_oil"/>
+				<connect2 to="Emissions.emissions_factor_oil" from="CCS.emissions_factor_oil"/>
 				<connect to="Emissions.forest_regrowth_carbon_uptake" from="Terrestrial_Carbon_Balance.forest_regrowth_carbon_uptake"/>
 				<connect2 to="Emissions.forest_regrowth_carbon_uptake" from="Terrestrial_Carbon_Balance.forest_regrowth_carbon_uptake"/>
 				<connect to="Emissions.Fossil_Energy_Extraction_1" from="fossil_energy_coal.Fossil_Fuel_Extraction_Carbon"/>
@@ -720,20 +743,54 @@ Carbon" url="/Users/magr099/Documents/GitHub/WorldTransFRIDA_MBG/FRIDA_Modules/O
 				<connect2 to="Emissions.man_made_fertilizer_use" from="Land_Nutrients.man_made_fertilizer_use"/>
 				<connect to="Emissions.Population" from="Demographics.Population"/>
 				<connect2 to="Emissions.Population" from="Demographics.Population"/>
+				<connect to="Emissions.Primary_Energy_coal_SSP1" from="CCS.Primary_Energy_coal_SSP1"/>
+				<connect2 to="Emissions.Primary_Energy_coal_SSP1" from="CCS.Primary_Energy_coal_SSP1"/>
+				<connect to="Emissions.Primary_Energy_coal_SSP2" from="CCS.Primary_Energy_coal_SSP2"/>
+				<connect2 to="Emissions.Primary_Energy_coal_SSP2" from="CCS.Primary_Energy_coal_SSP2"/>
+				<connect to="Emissions.Primary_Energy_coal_SSP3" from="CCS.Primary_Energy_coal_SSP3"/>
+				<connect2 to="Emissions.Primary_Energy_coal_SSP3" from="CCS.Primary_Energy_coal_SSP3"/>
+				<connect to="Emissions.Primary_Energy_coal_SSP4" from="CCS.Primary_Energy_coal_SSP4"/>
+				<connect2 to="Emissions.Primary_Energy_coal_SSP4" from="CCS.Primary_Energy_coal_SSP4"/>
+				<connect to="Emissions.Primary_Energy_coal_SSP5" from="CCS.Primary_Energy_coal_SSP5"/>
+				<connect2 to="Emissions.Primary_Energy_coal_SSP5" from="CCS.Primary_Energy_coal_SSP5"/>
+				<connect to="Emissions.Primary_Energy_gas_SSP3" from="CCS.Primary_Energy_gas_SSP3"/>
+				<connect2 to="Emissions.Primary_Energy_gas_SSP3" from="CCS.Primary_Energy_gas_SSP3"/>
+				<connect to="Emissions.Primary_Energy_gas_SSP3_1" from="CCS.Primary_Energy_gas_SSP1"/>
+				<connect2 to="Emissions.Primary_Energy_gas_SSP3_1" from="CCS.Primary_Energy_gas_SSP1"/>
+				<connect to="Emissions.Primary_Energy_gas_SSP3_2" from="CCS.Primary_Energy_gas_SSP2"/>
+				<connect2 to="Emissions.Primary_Energy_gas_SSP3_2" from="CCS.Primary_Energy_gas_SSP2"/>
+				<connect to="Emissions.Primary_Energy_gas_SSP3_3" from="CCS.Primary_Energy_gas_SSP5"/>
+				<connect2 to="Emissions.Primary_Energy_gas_SSP3_3" from="CCS.Primary_Energy_gas_SSP5"/>
+				<connect to="Emissions.Primary_Energy_gas_SSP3_4" from="CCS.Primary_Energy_gas_SSP4"/>
+				<connect2 to="Emissions.Primary_Energy_gas_SSP3_4" from="CCS.Primary_Energy_gas_SSP4"/>
+				<connect to="Emissions.Primary_Energy_oil_SSP3" from="CCS.Primary_Energy_oil_SSP3"/>
+				<connect2 to="Emissions.Primary_Energy_oil_SSP3" from="CCS.Primary_Energy_oil_SSP3"/>
+				<connect to="Emissions.Primary_Energy_oil_SSP3_1" from="CCS.Primary_Energy_oil_SSP5"/>
+				<connect2 to="Emissions.Primary_Energy_oil_SSP3_1" from="CCS.Primary_Energy_oil_SSP5"/>
+				<connect to="Emissions.Primary_Energy_oil_SSP3_2" from="CCS.Primary_Energy_oil_SSP4"/>
+				<connect2 to="Emissions.Primary_Energy_oil_SSP3_2" from="CCS.Primary_Energy_oil_SSP4"/>
+				<connect to="Emissions.Primary_Energy_oil_SSP3_3" from="CCS.Primary_Energy_oil_SSP1"/>
+				<connect2 to="Emissions.Primary_Energy_oil_SSP3_3" from="CCS.Primary_Energy_oil_SSP1"/>
+				<connect to="Emissions.Primary_Energy_oil_SSP3_4" from="CCS.Primary_Energy_oil_SSP2"/>
+				<connect2 to="Emissions.Primary_Energy_oil_SSP3_4" from="CCS.Primary_Energy_oil_SSP2"/>
 				<connect to="Emissions.real_GDP_per_person" from="Demographics.real_GDP_per_person"/>
 				<connect2 to="Emissions.real_GDP_per_person" from="Demographics.real_GDP_per_person"/>
 				<connect to="Emissions.relative_carbon_intensity_of_biofuels_to_petroleum_fuels" from="bio_fuel_energy.relative_carbon_intensity_of_biofuels_to_petroleum_fuels"/>
 				<connect2 to="Emissions.relative_carbon_intensity_of_biofuels_to_petroleum_fuels" from="bio_fuel_energy.relative_carbon_intensity_of_biofuels_to_petroleum_fuels"/>
-				<connect to="Emissions.share_of_biofuel_emissions_stored" from="Government_Regulations.share_of_biofuel_emissions_stored"/>
-				<connect2 to="Emissions.share_of_biofuel_emissions_stored" from="Government_Regulations.share_of_biofuel_emissions_stored"/>
-				<connect to="Emissions.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
-				<connect2 to="Emissions.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
-				<connect to="Emissions.share_of_gas_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
-				<connect2 to="Emissions.share_of_gas_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
-				<connect to="Emissions.share_of_oil_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
-				<connect2 to="Emissions.share_of_oil_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
+				<connect to="Emissions.share_of_coal_emissions_stored" from="Government_Regulations.share_of_biofuel_emissions_stored"/>
+				<connect2 to="Emissions.share_of_coal_emissions_stored" from="Government_Regulations.share_of_biofuel_emissions_stored"/>
+				<connect to="Emissions.share_of_coal_energy_stored" from="CCS.share_of_coal_energy_stored"/>
+				<connect2 to="Emissions.share_of_coal_energy_stored" from="CCS.share_of_coal_energy_stored"/>
+				<connect to="Emissions.share_of_gas_energy_stored" from="CCS.share_of_gas_energy_stored"/>
+				<connect2 to="Emissions.share_of_gas_energy_stored" from="CCS.share_of_gas_energy_stored"/>
+				<connect to="Emissions.share_of_oil_energy_stored" from="CCS.share_of_oil_energy_stored"/>
+				<connect2 to="Emissions.share_of_oil_energy_stored" from="CCS.share_of_oil_energy_stored"/>
+				<connect to="Emissions.SSP_experiments" from="CCS.SSP_experiments"/>
+				<connect2 to="Emissions.SSP_experiments" from="CCS.SSP_experiments"/>
 				<connect to="Emissions.start_year" from="Government_Regulations.start_year"/>
 				<connect2 to="Emissions.start_year" from="Government_Regulations.start_year"/>
+				<connect to="Emissions.switch_SSP" from="CCS.switch_SSP"/>
+				<connect2 to="Emissions.switch_SSP" from="CCS.switch_SSP"/>
 				<connect to="Emissions.Terrestrial_carbon_balance" from="Terrestrial_Carbon_Balance.Terrestrial_carbon_balance"/>
 				<connect2 to="Emissions.Terrestrial_carbon_balance" from="Terrestrial_Carbon_Balance.Terrestrial_carbon_balance"/>
 				<connect to="Emissions.UNIT_ktN2O_to_MtN2O" from="Climate_Units.UNIT_ktN2O_to_MtN2O"/>
@@ -742,7 +799,7 @@ Carbon" url="/Users/magr099/Documents/GitHub/WorldTransFRIDA_MBG/FRIDA_Modules/O
 				<connect2 to="Emissions.UNIT_ktN2O_to_MtN2O_1" from="Climate_Units.UNIT_ktN2O_to_MtN2O"/>
 			</module>
 			<module name="Forcing" isee:label="Radiative
-Forcing" url="/Users/magr099/Documents/GitHub/WorldTransFRIDA_MBG/FRIDA_Modules/Forcing.itmx">
+Forcing" url="/Users/murali/WorldTransFRIDA/FRIDA_Modules/Forcing.itmx">
 				<format scale_by="auto"/>
 				<connect to="Planetary_Boundaries.Anthropogenic_Effective_Radiative_Forcing" from="Forcing.Anthropogenic_Effective_Radiative_Forcing"/>
 				<connect2 to="Planetary_Boundaries.Anthropogenic_Effective_Radiative_Forcing" from="Forcing.Anthropogenic_Effective_Radiative_Forcing"/>
@@ -1183,7 +1240,7 @@ Forcing" url="/Users/magr099/Documents/GitHub/WorldTransFRIDA_MBG/FRIDA_Modules/
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="3" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="3" isee:scroll_y="65" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1246,7 +1303,7 @@ Forcing" url="/Users/magr099/Documents/GitHub/WorldTransFRIDA_MBG/FRIDA_Modules/
 				<module label_side="center" x="550" y="316.919" name="Energy\nBalance\nModel"/>
 				<module label_side="center" x="273.5" y="314.833" name="Emissions"/>
 				<module label_side="center" x="371.332" y="313.586" name="Forcing"/>
-				<connector uid="18" isee:thickness="2" angle="356.836" isee:autocreated="true">
+				<connector uid="18" isee:thickness="2" angle="0.730272" isee:autocreated="true">
 					<from>Emissions</from>
 					<to>Forcing</to>
 				</connector>
@@ -1270,7 +1327,7 @@ Forcing" url="/Users/magr099/Documents/GitHub/WorldTransFRIDA_MBG/FRIDA_Modules/
 					<from>Climate_Units</from>
 					<to>Energy_Balance_Model</to>
 				</connector>
-				<connector uid="42" color="#F0F3F3" font_color="#F0F3F3" isee:thickness="1" angle="231.154" isee:autocreated="true">
+				<connector uid="42" color="#F0F3F3" font_color="#F0F3F3" isee:thickness="1" angle="231.153" isee:autocreated="true">
 					<from>Climate_Units</from>
 					<to>Emissions</to>
 				</connector>
@@ -1513,7 +1570,7 @@ This variable is unitless to avoid units issues with parameters in the downstrea
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -5568,7 +5625,7 @@ N = -k1T1 + (1-epsilon)*k3*(T2-T3)</doc>
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -5591,7 +5648,7 @@ N = -k1T1 + (1-epsilon)*k3*(T2-T3)</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1123" page_height="793" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="284" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="284" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6607,7 +6664,7 @@ Should only ever be varied with Initial Committed Soil Carbon Emissions from Lan
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -7272,7 +7329,7 @@ FUTURE: peatland carbon sink should maybe depend on global mean temperature and 
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -7611,7 +7668,7 @@ FUTURE: peatland carbon sink should maybe depend on global mean temperature and 
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -7934,7 +7991,7 @@ FUTURE: peatland carbon sink should maybe depend on global mean temperature and 
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>

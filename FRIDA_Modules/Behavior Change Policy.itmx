@@ -5,7 +5,7 @@
 		<name>Behavior Change Policy</name>
 		<uuid>c9160462-7fda-413d-ac25-364fb4636fcf</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="4.2" isee:build_number="3866" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="4.3.1" isee:build_number="3962" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<ai_information>
 		<status verified="false"/>

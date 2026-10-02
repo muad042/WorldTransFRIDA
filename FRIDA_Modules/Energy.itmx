@@ -5,7 +5,7 @@
 		<name>Energy</name>
 		<uuid>53030c2e-cd2f-4ffd-b370-dc25b4a09591</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="4.2.1" isee:build_number="3906" isee:saved_by_v1="true" lang="en">Stella_Architect</product>
+		<product version="4.3.1" isee:build_number="3962" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<ai_information>
 		<status verified="false"/>
@@ -250,6 +250,18 @@
 			<eqn>1</eqn>
 			<alias>dmnl</alias>
 			<alias>unitless</alias>
+		</unit>
+		<unit name="G">
+			<eqn>Giga</eqn>
+		</unit>
+		<unit name="GtCO2">
+			<eqn>Giga*tCO2</eqn>
+		</unit>
+		<unit name="GtCH4">
+			<eqn>Giga*tCH4</eqn>
+		</unit>
+		<unit name="GtN2O">
+			<eqn>Giga*tN2O</eqn>
 		</unit>
 	</model_units>
 	<model name="Energy" run="true">
@@ -500,8 +512,8 @@
 				<connect2 to="fossil_energy_coal.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Coal_energy_conversion" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Coal_energy_conversion"/>
 				<connect to="fossil_energy_coal.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_coal_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_coal_extraction"/>
 				<connect2 to="fossil_energy_coal.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_coal_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_coal_extraction"/>
-				<connect to="fossil_energy_coal.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
-				<connect2 to="fossil_energy_coal.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
+				<connect to="fossil_energy_coal.share_of_coal_energy_stored" from="CCS.share_of_coal_energy_stored"/>
+				<connect2 to="fossil_energy_coal.share_of_coal_energy_stored" from="CCS.share_of_coal_energy_stored"/>
 				<connect to="fossil_energy_coal.tax_for_newly_installed_coal_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_energy_production_capacity"/>
 				<connect2 to="fossil_energy_coal.tax_for_newly_installed_coal_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_energy_production_capacity"/>
 				<connect to="fossil_energy_coal.tax_for_newly_installed_coal_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_extraction_capacity"/>
@@ -566,8 +578,8 @@
 				<connect2 to="fossil_energy_gas.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_energy_conversion" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_energy_conversion"/>
 				<connect to="fossil_energy_gas.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_extraction"/>
 				<connect2 to="fossil_energy_gas.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_extraction"/>
-				<connect to="fossil_energy_gas.share_of_coal_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
-				<connect2 to="fossil_energy_gas.share_of_coal_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
+				<connect to="fossil_energy_gas.share_of_gas_energy_stored" from="CCS.share_of_gas_energy_stored"/>
+				<connect2 to="fossil_energy_gas.share_of_gas_energy_stored" from="CCS.share_of_gas_energy_stored"/>
 				<connect to="fossil_energy_gas.tax_for_newly_installed_gas_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_extraction_capacity"/>
 				<connect2 to="fossil_energy_gas.tax_for_newly_installed_gas_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_extraction_capacity"/>
 				<connect to="fossil_energy_gas.tax_for_newly_installed_gas_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_energy_production_capacity"/>
@@ -628,8 +640,8 @@
 				<connect2 to="fossil_energy_oil.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_energy_conversion" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_energy_conversion"/>
 				<connect to="fossil_energy_oil.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_extraction"/>
 				<connect2 to="fossil_energy_oil.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_extraction"/>
-				<connect to="fossil_energy_oil.share_of_coal_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
-				<connect2 to="fossil_energy_oil.share_of_coal_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
+				<connect to="fossil_energy_oil.share_of_oil_energy_stored" from="CCS.share_of_oil_energy_stored"/>
+				<connect2 to="fossil_energy_oil.share_of_oil_energy_stored" from="CCS.share_of_oil_energy_stored"/>
 				<connect to="fossil_energy_oil.tax_for_newly_installed_oil_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_extraction_capacity"/>
 				<connect2 to="fossil_energy_oil.tax_for_newly_installed_oil_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_extraction_capacity"/>
 				<connect to="fossil_energy_oil.tax_for_newly_installed_oil_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_energy_production_capacity"/>
@@ -898,7 +910,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1097" page_height="767" isee:page_cols="12" isee:page_rows="7" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="12" isee:page_rows="7" isee:scroll_x="155" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -5385,8 +5397,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="fossil_energy_coal.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Coal_energy_conversion" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Coal_energy_conversion"/>
 				<connect to="fossil_energy_coal.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_coal_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_coal_extraction"/>
 				<connect2 to="fossil_energy_coal.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_coal_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_coal_extraction"/>
-				<connect to="fossil_energy_coal.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
-				<connect2 to="fossil_energy_coal.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
+				<connect to="fossil_energy_coal.share_of_coal_energy_stored" from="CCS.share_of_coal_energy_stored"/>
+				<connect2 to="fossil_energy_coal.share_of_coal_energy_stored" from="CCS.share_of_coal_energy_stored"/>
 				<connect to="fossil_energy_coal.tax_for_newly_installed_coal_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_energy_production_capacity"/>
 				<connect2 to="fossil_energy_coal.tax_for_newly_installed_coal_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_energy_production_capacity"/>
 				<connect to="fossil_energy_coal.tax_for_newly_installed_coal_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_extraction_capacity"/>
@@ -5459,8 +5471,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="fossil_energy_gas.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_energy_conversion" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_energy_conversion"/>
 				<connect to="fossil_energy_gas.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_extraction"/>
 				<connect2 to="fossil_energy_gas.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_extraction"/>
-				<connect to="fossil_energy_gas.share_of_coal_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
-				<connect2 to="fossil_energy_gas.share_of_coal_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
+				<connect to="fossil_energy_gas.share_of_gas_energy_stored" from="CCS.share_of_gas_energy_stored"/>
+				<connect2 to="fossil_energy_gas.share_of_gas_energy_stored" from="CCS.share_of_gas_energy_stored"/>
 				<connect to="fossil_energy_gas.tax_for_newly_installed_gas_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_extraction_capacity"/>
 				<connect2 to="fossil_energy_gas.tax_for_newly_installed_gas_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_extraction_capacity"/>
 				<connect to="fossil_energy_gas.tax_for_newly_installed_gas_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_energy_production_capacity"/>
@@ -5539,8 +5551,8 @@ https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_c
 				<connect2 to="fossil_energy_oil.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_energy_conversion" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_energy_conversion"/>
 				<connect to="fossil_energy_oil.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_extraction"/>
 				<connect2 to="fossil_energy_oil.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_extraction"/>
-				<connect to="fossil_energy_oil.share_of_coal_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
-				<connect2 to="fossil_energy_oil.share_of_coal_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
+				<connect to="fossil_energy_oil.share_of_oil_energy_stored" from="CCS.share_of_oil_energy_stored"/>
+				<connect2 to="fossil_energy_oil.share_of_oil_energy_stored" from="CCS.share_of_oil_energy_stored"/>
 				<connect to="fossil_energy_oil.tax_for_newly_installed_oil_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_extraction_capacity"/>
 				<connect2 to="fossil_energy_oil.tax_for_newly_installed_oil_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_extraction_capacity"/>
 				<connect to="fossil_energy_oil.tax_for_newly_installed_oil_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_energy_production_capacity"/>
@@ -5852,7 +5864,7 @@ Arbitrary unit of energy used to calculate the differentials of cost to produce 
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1097" page_height="767" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="39" isee:scroll_y="243" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6772,8 +6784,8 @@ ELSE
 				<connect2 to="fossil_energy_coal.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Coal_energy_conversion" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Coal_energy_conversion"/>
 				<connect to="fossil_energy_coal.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_coal_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_coal_extraction"/>
 				<connect2 to="fossil_energy_coal.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_coal_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_coal_extraction"/>
-				<connect to="fossil_energy_coal.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
-				<connect2 to="fossil_energy_coal.share_of_coal_emissions_stored" from="Government_Regulations.share_of_coal_emissions_stored"/>
+				<connect to="fossil_energy_coal.share_of_coal_energy_stored" from="CCS.share_of_coal_energy_stored"/>
+				<connect2 to="fossil_energy_coal.share_of_coal_energy_stored" from="CCS.share_of_coal_energy_stored"/>
 				<connect to="fossil_energy_coal.tax_for_newly_installed_coal_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_energy_production_capacity"/>
 				<connect2 to="fossil_energy_coal.tax_for_newly_installed_coal_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_energy_production_capacity"/>
 				<connect to="fossil_energy_coal.tax_for_newly_installed_coal_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_coal_extraction_capacity"/>
@@ -6869,8 +6881,8 @@ ELSE
 				<connect2 to="fossil_energy_oil.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_energy_conversion" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_energy_conversion"/>
 				<connect to="fossil_energy_oil.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_extraction"/>
 				<connect2 to="fossil_energy_oil.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Oil_extraction"/>
-				<connect to="fossil_energy_oil.share_of_coal_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
-				<connect2 to="fossil_energy_oil.share_of_coal_emissions_stored" from="Government_Regulations.share_of_oil_emissions_stored"/>
+				<connect to="fossil_energy_oil.share_of_oil_energy_stored" from="CCS.share_of_oil_energy_stored"/>
+				<connect2 to="fossil_energy_oil.share_of_oil_energy_stored" from="CCS.share_of_oil_energy_stored"/>
 				<connect to="fossil_energy_oil.tax_for_newly_installed_oil_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_extraction_capacity"/>
 				<connect2 to="fossil_energy_oil.tax_for_newly_installed_oil_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_extraction_capacity"/>
 				<connect to="fossil_energy_oil.tax_for_newly_installed_oil_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_oil_energy_production_capacity"/>
@@ -6948,8 +6960,8 @@ ELSE
 				<connect2 to="fossil_energy_gas.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_energy_conversion" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_energy_conversion"/>
 				<connect to="fossil_energy_gas.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_extraction"/>
 				<connect2 to="fossil_energy_gas.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_extraction" from="Government.ratio_of_fulfilled_subsidy_requests_to_unfulfilled_subsidy_requests_for_investments_into_Gas_extraction"/>
-				<connect to="fossil_energy_gas.share_of_coal_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
-				<connect2 to="fossil_energy_gas.share_of_coal_emissions_stored" from="Government_Regulations.share_of_gas_emissions_stored"/>
+				<connect to="fossil_energy_gas.share_of_gas_energy_stored" from="CCS.share_of_gas_energy_stored"/>
+				<connect2 to="fossil_energy_gas.share_of_gas_energy_stored" from="CCS.share_of_gas_energy_stored"/>
 				<connect to="fossil_energy_gas.tax_for_newly_installed_gas_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_extraction_capacity"/>
 				<connect2 to="fossil_energy_gas.tax_for_newly_installed_gas_extraction_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_extraction_capacity"/>
 				<connect to="fossil_energy_gas.tax_for_newly_installed_gas_energy_production_capacity" from="Government_Regulations.tax_rate_on_newly_installed_gas_energy_production_capacity"/>
@@ -7143,7 +7155,7 @@ Primary_Fossil_Energy_FUEL_1+
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1097" page_height="767" isee:page_cols="4" isee:page_rows="4" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="4" isee:page_rows="4" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -8064,7 +8076,9 @@ ELSE
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>(1-(IF TIME &gt; Policy_Start_Year THEN share_of_coal_emissions_stored ELSE 0 )) 
+				<eqn>(1-(IF TIME &gt; Policy_Start_Year THEN 
+share_of_coal_energy_stored 
+ELSE 0 )) 
 * 
 Carbon_needed_for_extra_energy_output_through_fuel_extraction_per_unit
 *
@@ -8195,7 +8209,7 @@ electricity from coal is 10468TWh/year, secondary energy from coal is 18281
 					<dim name="Run"/>
 				</dimensions>
 				<eqn>(IF TIME &gt; Policy_Start_Year THEN
-share_of_coal_emissions_stored
+share_of_coal_energy_stored
 ELSE
 0)
 * 
@@ -8205,15 +8219,6 @@ GtC_to_MtCO2</eqn>
 				<units>MtCO2/kWh</units>
 			</aux>
 			<aux name="tax for newly installed\ncoal energy production capacity" access="input">
-				<eqn>TIME</eqn>
-				<gf>
-					<xscale min="1980" max="2100"/>
-					<yscale min="0" max="100"/>
-					<ypts>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</ypts>
-				</gf>
-				<units>dmnl</units>
-			</aux>
-			<aux name="share of coal emissions stored" access="input">
 				<eqn>TIME</eqn>
 				<gf>
 					<xscale min="1980" max="2100"/>
@@ -8511,6 +8516,16 @@ tax_for_newly_installed_coal_energy_production_capacity</eqn>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
+			<aux name="share of coal energy stored" access="output" throughput="true">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{_l_}IF TIME &gt;= 2010 AND CCS_experiments=1 THEN
+CCS_coal_SSP345*emissions_factor_coal/CO2_emissions_coal
+ELSE
+0</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -8560,7 +8575,7 @@ tax_for_newly_installed_coal_energy_production_capacity</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1097" page_height="767" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="506.429" isee:scroll_y="328.571" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="1110.71" isee:scroll_y="808.571" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -9118,15 +9133,6 @@ tax_for_newly_installed_coal_energy_production_capacity</eqn>
 					<to>cost_net_of_taxes_of_extra_energy_output_through_fuel_extraction_per_unit</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="1924.17" y="868.307" name="tax for newly installed\ncoal energy production capacity"/>
-				<aux font_style="italic" font_weight="bold" x="1737.5" y="1135.63" name="share of coal emissions stored"/>
-				<connector uid="210" angle="199.502">
-					<from>share_of_coal_emissions_stored</from>
-					<to>extra_CO2_storage_per_unit</to>
-				</connector>
-				<connector uid="211" angle="218.019">
-					<from>share_of_coal_emissions_stored</from>
-					<to>extra_CO2_emissions_per_unit</to>
-				</connector>
 				<connector uid="213" angle="91.6173">
 					<from>
 						<alias uid="194"/>
@@ -9524,6 +9530,15 @@ tax_for_newly_installed_coal_energy_production_capacity</eqn>
 				<connector uid="310" angle="180.631">
 					<from>Effective_tax_rate_on_newly_installed_energy_conversion_capacity_with_budgeted_subsidies</from>
 					<to>energy_conversion_installation_tax_burden</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="1754.84" y="1132.7" name="share of coal energy stored"/>
+				<connector uid="311" angle="171.96">
+					<from>share_of_coal_energy_stored</from>
+					<to>extra_CO2_storage_per_unit</to>
+				</connector>
+				<connector uid="312" angle="245.126">
+					<from>share_of_coal_energy_stored</from>
+					<to>extra_CO2_emissions_per_unit</to>
 				</connector>
 				<alias uid="47" x="1592.04" y="153.5" width="18" height="18">
 					<of>damage_rate_of_energy_capital_from_STA</of>
@@ -10155,7 +10170,7 @@ ELSE
 					<dim name="Run"/>
 				</dimensions>
 				<eqn>(1-(IF TIME &gt; Policy_Start_Year THEN
-share_of_coal_emissions_stored
+share_of_gas_energy_stored
 ELSE
 0)) 
 *
@@ -10309,7 +10324,7 @@ specifies ~6623TWh/year electricity geenereation from oil. Calib data for second
 					<dim name="Run"/>
 				</dimensions>
 				<eqn>(IF TIME &gt; Policy_Start_Year THEN
-share_of_coal_emissions_stored
+share_of_gas_energy_stored
 ELSE
 0)
 * 
@@ -10317,15 +10332,6 @@ Carbon_needed_for_extra_energy_output_through_fuel_extraction_per_unit
 *
 GtC_to_MtCO2</eqn>
 				<units>MtCO2/kWh</units>
-			</aux>
-			<aux name="share of coal emissions stored" access="input">
-				<eqn>TIME</eqn>
-				<gf>
-					<xscale min="1980" max="2100"/>
-					<yscale min="0" max="100"/>
-					<ypts>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</ypts>
-				</gf>
-				<units>dmnl</units>
 			</aux>
 			<aux name="energy conversion installation tax burden">
 				<dimensions>
@@ -10602,6 +10608,16 @@ tax_for_newly_installed_gas_energy_production_capacity</eqn>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
+			<aux name="share of gas energy stored" access="output" throughput="true">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{_l_}IF TIME &gt;= 2010 AND CCS_experiments=1 THEN
+CCS_gas_SSP345*emissions_factor_gas/CO2_emissions_gas
+ELSE
+0</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -10651,7 +10667,7 @@ tax_for_newly_installed_gas_energy_production_capacity</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1097" page_height="767" isee:page_cols="3" isee:page_rows="4" isee:scroll_y="714.286" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="3" isee:page_rows="4" isee:scroll_x="1177.86" isee:scroll_y="982.143" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -11192,11 +11208,6 @@ tax_for_newly_installed_gas_energy_production_capacity</eqn>
 					<from>extra_CO2_storage_per_unit</from>
 					<to>extra_CO2_storage_cost_burden</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1701.5" y="1123.13" name="share of coal emissions stored"/>
-				<connector uid="178" angle="199.502">
-					<from>share_of_coal_emissions_stored</from>
-					<to>extra_CO2_storage_per_unit</to>
-				</connector>
 				<connector uid="179" angle="223.703">
 					<from>extra_CO2_storage_cost_burden</from>
 					<to>cost_net_of_taxes_of_extra_energy_output_through_fuel_extraction_per_unit</to>
@@ -11208,10 +11219,6 @@ tax_for_newly_installed_gas_energy_production_capacity</eqn>
 				<connector uid="181" angle="148.605">
 					<from>GtC_to_MtCO2</from>
 					<to>extra_CO2_storage_per_unit</to>
-				</connector>
-				<connector uid="182" angle="236.079">
-					<from>share_of_coal_emissions_stored</from>
-					<to>extra_CO2_emissions_per_unit</to>
 				</connector>
 				<connector uid="184" angle="71.1509">
 					<from>
@@ -11588,6 +11595,15 @@ tax_for_newly_installed_gas_energy_production_capacity</eqn>
 				<connector uid="261" angle="17.1107">
 					<from>Effective_tax_rate_on_newly_installed_extraction_capacity_with_budgeted_subsidies</from>
 					<to>fuel_extraction_installation_tax_burden</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="1724" y="1149.4" width="17.8247" height="17.8247" name="share of gas energy stored"/>
+				<connector uid="262" angle="184.433">
+					<from>share_of_gas_energy_stored</from>
+					<to>extra_CO2_storage_per_unit</to>
+				</connector>
+				<connector uid="263" angle="234.481">
+					<from>share_of_gas_energy_stored</from>
+					<to>extra_CO2_emissions_per_unit</to>
 				</connector>
 				<alias uid="47" x="1586.35" y="125.833" width="18" height="18">
 					<of>damage_rate_of_energy_capital_from_STA</of>
@@ -12211,7 +12227,7 @@ ELSE
 					<dim name="Run"/>
 				</dimensions>
 				<eqn>(1-(IF TIME &gt; Policy_Start_Year THEN
-share_of_coal_emissions_stored
+share_of_oil_energy_stored
 ELSE
 0))
 *
@@ -12405,7 +12421,7 @@ https://ourworldindata.org/grapher/fossil-fuel-production</doc>
 					<dim name="Run"/>
 				</dimensions>
 				<eqn>(IF TIME &gt; Policy_Start_Year THEN
-share_of_coal_emissions_stored
+share_of_oil_energy_stored
 ELSE
 0)
 * 
@@ -12413,15 +12429,6 @@ Carbon_needed_for_extra_energy_output_through_fuel_extraction_per_unit
 *
 GtC_to_MtCO2</eqn>
 				<units>MtCO2/kWh</units>
-			</aux>
-			<aux name="share of coal emissions stored" access="input">
-				<eqn>TIME</eqn>
-				<gf>
-					<xscale min="1980" max="2100"/>
-					<yscale min="0" max="100"/>
-					<ypts>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</ypts>
-				</gf>
-				<units>dmnl</units>
 			</aux>
 			<aux name="energy conversion installation tax burden">
 				<dimensions>
@@ -12698,6 +12705,16 @@ tax_for_newly_installed_oil_energy_production_capacity</eqn>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
+			<aux name="share of oil energy stored" access="output" throughput="true">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{_l_}IF TIME &gt;= 2010 AND CCS_experiments=1 THEN
+CCS_oil_SSP345*emissions_factor_oil/CO2_emissions_oil
+ELSE
+0</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -12747,7 +12764,7 @@ tax_for_newly_installed_oil_energy_production_capacity</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1097" page_height="767" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="601.25" isee:scroll_y="485.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="1403.75" isee:scroll_y="915.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -13319,11 +13336,6 @@ tax_for_newly_installed_oil_energy_production_capacity</eqn>
 					<from>extra_CO2_storage_per_unit</from>
 					<to>extra_CO2_storage_cost_burden</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1811.88" y="1135.01" name="share of coal emissions stored"/>
-				<connector uid="222" angle="199.502">
-					<from>share_of_coal_emissions_stored</from>
-					<to>extra_CO2_storage_per_unit</to>
-				</connector>
 				<connector uid="223" angle="208.231">
 					<from>extra_CO2_storage_cost_burden</from>
 					<to>cost_net_of_taxes_of_extra_energy_output_through_fuel_extraction_per_unit</to>
@@ -13335,10 +13347,6 @@ tax_for_newly_installed_oil_energy_production_capacity</eqn>
 				<connector uid="225" angle="150.261">
 					<from>GtC_to_MtCO2</from>
 					<to>extra_CO2_storage_per_unit</to>
-				</connector>
-				<connector uid="226" angle="215.531">
-					<from>share_of_coal_emissions_stored</from>
-					<to>extra_CO2_emissions_per_unit</to>
 				</connector>
 				<connector uid="228" angle="48.6724">
 					<from>
@@ -13719,6 +13727,15 @@ tax_for_newly_installed_oil_energy_production_capacity</eqn>
 				<connector uid="321" angle="19.2399">
 					<from>Effective_tax_rate_on_newly_installed_extraction_capacity_with_budgeted_subsidies</from>
 					<to>fuel_extraction_installation_tax_burden</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="1815.93" y="1132.06" name="share of oil energy stored"/>
+				<connector uid="322" angle="205.177">
+					<from>share_of_oil_energy_stored</from>
+					<to>extra_CO2_storage_per_unit</to>
+				</connector>
+				<connector uid="323" angle="217.056">
+					<from>share_of_oil_energy_stored</from>
+					<to>extra_CO2_emissions_per_unit</to>
 				</connector>
 				<alias uid="47" x="1552.96" y="134.333" width="18" height="18">
 					<of>damage_rate_of_energy_capital_from_STA</of>
@@ -14710,7 +14727,7 @@ Wind_Energy_Output+
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1097" page_height="767" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="66.6667" zoom="180" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="119.444" zoom="180" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -16283,7 +16300,7 @@ tax_for_newly_installed_hydropower_capacity</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="1097" page_height="767" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="52.5" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="822" page_height="575" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="156.25" isee:scroll_y="95.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
